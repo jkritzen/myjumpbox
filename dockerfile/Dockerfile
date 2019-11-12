@@ -4,15 +4,16 @@ FROM fedora:latest
 # Open port 22 so linked containers can see it
 EXPOSE 22
 
+
+
 # Add Users & ssh public keys
-RUN \
-  passwd -d root && \
-  adduser -D -s /bin/bash jkritzen && \
-  passwd -u jkritzen && \
-  chown -R jkritzen:jkritzen /home/jkritzen && \
+ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
 
-ADD https://github.com/sickp.keys /home/sickp/.ssh/authorized_keys
-
+RUN dnf -y install passwd
+ 
+RUN passwd -d root
+RUN adduser jkritzen -d /home/jkritzen
+RUN chown -R jkritzen:jkritzen /home/jkritzen
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
