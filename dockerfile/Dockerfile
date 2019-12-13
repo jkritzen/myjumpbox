@@ -20,12 +20,9 @@ RUN chown -R jkritzen:jkritzen /home/jkritzen
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
-ADD setup.sh /setup.sh
-RUN chmod 0755 /setup.sh
-RUN /setup.sh
 
 # Called on first run of docker - will run supervisor
-ADD start.sh /start.sh
+ADD ./start.sh /start.sh
 RUN chmod 0755 /start.sh
 
 CMD /start.sh
