@@ -22,7 +22,7 @@ RUN chown -R jkritzen:jkritzen /home/jkritzen
 # this dockerfile directly.
 
 # Called on first run of docker - will run supervisor
-ADD /start.sh /start.sh
+ADD start.sh /start.sh
 RUN chmod 0755 /start.sh
 
 CMD /start.sh
