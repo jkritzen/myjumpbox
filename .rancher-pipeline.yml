@@ -7,4 +7,4 @@
 - name: Deploy
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./jump.yaml
