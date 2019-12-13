@@ -1,2 +1,15 @@
+stages:
+- name: BuildImage
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: jkritzen/jumphost
+      pushRemote: true
+      registry: index.docker.io
+- name: Deploy
+  steps:
+  - applyYamlConfig:
+      path: ./jump.yaml
 timeout: 60
 notification: {}
