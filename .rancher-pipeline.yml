@@ -2,7 +2,7 @@ stages:
 - name: BuildImage
   steps:
   - publishImageConfig:
-      dockerfilePath: ./Dockerfile
+      dockerfilePath: ./dockerfile/Dockerfile
       buildContext: .
       tag: jkritzen/jumphost
       pushRemote: true
