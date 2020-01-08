@@ -5,6 +5,7 @@ stages:
       dockerfilePath: ./dockerfile/Dockerfile
       buildContext: .
       tag: jkritzen/jumphost
+      pushRemote: true
       registry: index.docker.io
 - name: Deploy
   steps:
