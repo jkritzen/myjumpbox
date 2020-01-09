@@ -11,6 +11,8 @@ ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.
 
 RUN dnf -y install passwd
 RUN dnf -y install iputils
+RUN dnf -y install psutils
+
 RUN dnf install -y openssh-server
 RUN dnf install -y openssh-clients
  
