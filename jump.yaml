@@ -31,7 +31,7 @@ spec:
   externalTrafficPolicy: Cluster
   ports:
   - name: tcp-ssh
-    nodePort: 30022
+    nodePort:
     port: 22
     protocol: TCP
     targetPort: 22
