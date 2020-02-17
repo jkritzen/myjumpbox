@@ -22,7 +22,7 @@ RUN adduser jkritzen -d /home/jkritzen
 RUN chown -R jkritzen:jkritzen /home/jkritzen
 RUN chmod +x /usr/local/bin/confd
 
-ADD /confd-config.toml /etc/confd
+ADD confd/confd-config.toml /etc/confd
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
