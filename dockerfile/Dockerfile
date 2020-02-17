@@ -10,7 +10,7 @@ EXPOSE 22
 ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
 
 RUN dnf -y install passwd
-RUN dnf -y install iputils
+#RUN dnf -y install iputils
 RUN dnf -y install procps
 
 RUN dnf install -y openssh-server
