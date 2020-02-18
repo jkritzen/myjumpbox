@@ -1,4 +1,4 @@
-FROM fedora:latest
+FROM centos:7
 
 #-------------Application Specific Stuff ----------------------------------------------------
 # Open port 22 so linked containers can see it
