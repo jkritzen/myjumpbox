@@ -10,6 +10,10 @@ EXPOSE 22
 ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.10.0/confd-0.10.0-linux-amd64 /usr/local/bin/confd
 
+#Set up and enable epel YUM REPO before installing DNF
+RUN yum install epel-release
+RUN yum install DNF
+
 RUN dnf -y install passwd
 RUN dnf -y install iputils
 RUN dnf -y install procps
