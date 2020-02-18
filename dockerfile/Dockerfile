@@ -12,7 +12,7 @@ ADD https://github.com/kelseyhightower/confd/releases/download/v0.10.0/confd-0.1
 
 #Set up and enable epel YUM REPO before installing DNF
 RUN yum -y install epel-release
-RUN yum -y install DNF
+RUN yum -y install dnf
 
 RUN dnf -y install passwd
 RUN dnf -y install iputils
