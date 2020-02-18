@@ -8,7 +8,7 @@ EXPOSE 22
 
 # Add Users & ssh public keys
 ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
-ADD https://github.com/kelseyhightower/confd/releases/download/v0.10.0/confd-0.10.0-linux-amd64 /usr/local/bin/confd
+ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 /usr/local/bin/confd
 
 #Set up and enable epel YUM REPO before installing DNF
 RUN yum -y install epel-release
