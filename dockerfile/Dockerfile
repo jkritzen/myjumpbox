@@ -22,7 +22,8 @@ RUN adduser jkritzen -d /home/jkritzen
 RUN chown -R jkritzen:jkritzen /home/jkritzen
 RUN chmod +x /usr/local/bin/confd
 
-ADD https://github.com/jkritzen/myjumpbox/tree/master/dockerfile/confd /etc/confd
+ADD https://github.com/jkritzen/myjumpbox/tree/master/dockerfile/confd/confd-config.toml /etc/confd
+ADD https://github.com/jkritzen/myjumpbox/tree/master/dockerfile/confd/env.tmpl /etc/confd
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
