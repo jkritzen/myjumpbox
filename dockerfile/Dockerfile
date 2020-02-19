@@ -24,6 +24,8 @@ RUN dnf install -y openssh-clients
 RUN passwd -d root
 RUN adduser jkritzen -d /home/jkritzen
 RUN chown -R jkritzen:jkritzen /home/jkritzen
+
+RUN mkdir /etc/confd
 RUN chmod +x /usr/local/bin/confd
 
 ADD https://github.com/jkritzen/myjumpbox/tree/master/dockerfile/confd/confd-config.toml /etc/confd
