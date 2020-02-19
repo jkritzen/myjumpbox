@@ -25,11 +25,11 @@ RUN passwd -d root
 RUN adduser jkritzen -d /home/jkritzen
 RUN chown -R jkritzen:jkritzen /home/jkritzen
 
-RUN mkdir /etc/confd
-RUN chmod +x /usr/local/bin/confd
+RUN mkdir -p /etc/confd/{conf.d, templates}
+RUN chmod +x /etc/confd/{conf.d, templates}
 
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/confd-config.toml /etc/confd
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/env.tmpl /etc/confd
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.conf.tmpl /etc/confd
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
