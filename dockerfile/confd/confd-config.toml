@@ -1,6 +1,0 @@
-[confd-template]
-src = "env.tmpl"
-dest = "/user/local/bin/confd"
-keys = [
-        "env-variables/ssh"
-       ]

@@ -1,0 +1,7 @@
+[template]
+src = "sshconfig.conf.tmpl"
+dest = "/tmp/myconfig.conf"
+keys = [
+        "secret",
+        "user",
+       ]
