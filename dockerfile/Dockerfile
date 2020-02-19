@@ -28,8 +28,8 @@ RUN chown -R jkritzen:jkritzen /home/jkritzen
 RUN mkdir /etc/confd
 RUN chmod +x /usr/local/bin/confd
 
-https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/confd-config.toml /etc/confd
-https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/env.tmpl /etc/confd
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/confd-config.toml /etc/confd
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/env.tmpl /etc/confd
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
