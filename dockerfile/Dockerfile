@@ -29,7 +29,7 @@ RUN mkdir -p /etc/confd/{conf.d,templates}
 RUN chmod +x /etc/confd/{conf.d,templates}
 
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//sshconfig.conf.tmpl /etc/confd/templates
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd/conf.d
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
