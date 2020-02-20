@@ -22,11 +22,11 @@ RUN dnf install -y openssh-server
 RUN dnf install -y openssh-clients
  
 RUN passwd -d root
-RUN adduser jkritzen -d /home/jkritzen
-RUN chown -R jkritzen:jkritzen /home/jkritzen
+RUN adduser pridderbusch -d /home/pridderbusch
+RUN chown -R pridderbusch:pridderbusch /home/pridderbusch
 
 RUN mkdir -p /etc/confd/{conf.d,templates}
-RUN chmod +x /etc/confd/{conf.d,templates}
+RUN chmod 0755 /etc/confd/{conf.d,templates}
 
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//sshconfig.conf.tmpl /etc/confd/templates
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd/conf.d
