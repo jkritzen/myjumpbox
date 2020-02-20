@@ -1,6 +1,6 @@
 [template]
 src = "sshconfig.conf.tmpl"
-dest = "/home/pridderbusch/.ssh/authorized_key"
+dest = "/home/pridderbusch/.ssh/"
 keys = [
         "secret",
        ]
