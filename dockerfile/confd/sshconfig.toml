@@ -3,5 +3,4 @@ src = "sshconfig.conf.tmpl"
 dest = "/home/pridderbusch/.ssh/authorized_key"
 keys = [
         "secret",
-        "user",
        ]
