@@ -21,21 +21,19 @@ RUN dnf -y install procps
 RUN dnf install -y openssh-server
 RUN dnf install -y openssh-clients
  
-RUN passwd -d root
-RUN adduser pridderbusch -d /home/pridderbusch
-RUN chown -R pridderbusch:pridderbusch /home/pridderbusch
+RUN chmod 777 /usr/local/bin/confd
 
 RUN mkdir -p /etc/confd/{conf.d,templates}
 RUN chmod 777 /etc/confd/{conf.d,templates}
 
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//sshconfig.conf.tmpl /etc/confd/templates
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd/conf.d
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//userconfig.conf.tmpl /etc/confd/templates
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/userconfig.toml /etc/confd/conf.d
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
 
 # Called on first run of docker - will run supervisor
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/start.sh /start.sh
-RUN chmod 0755 /start.sh
-
+RUN chmod 777 /start.sh
+    
 CMD /start.sh
