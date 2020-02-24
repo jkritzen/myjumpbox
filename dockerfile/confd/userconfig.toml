@@ -1,0 +1,6 @@
+[template]
+src = "userconfig.conf.tmpl"
+dest = "/tmp/userconf.conf"
+keys = [
+        "user",
+       ]

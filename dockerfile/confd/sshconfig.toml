@@ -1,6 +1,0 @@
-[template]
-src = "sshconfig.conf.tmpl"
-dest = "/home/pridderbusch/.ssh/authorized_keys"
-keys = [
-        "secret",
-       ]
