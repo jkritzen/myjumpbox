@@ -7,7 +7,7 @@ EXPOSE 22
 
 
 # Add Users & ssh public keys
-ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
+# ADD https://raw.githubusercontent.com/Ontracon/jumpbox/master/dockerfile/id_rsa.pub /home/jkritzen/.ssh/authorized_keys
 ADD https://github.com/kelseyhightower/confd/releases/download/v0.16.0/confd-0.16.0-linux-amd64 /usr/local/bin/confd
 
 #Set up and enable epel YUM REPO before installing DNF
@@ -26,7 +26,7 @@ RUN adduser pridderbusch -d /home/pridderbusch
 RUN chown -R pridderbusch:pridderbusch /home/pridderbusch
 
 RUN mkdir -p /etc/confd/{conf.d,templates}
-RUN chmod 0755 /etc/confd/{conf.d,templates}
+RUN chmod 777 /etc/confd/{conf.d,templates}
 
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//sshconfig.conf.tmpl /etc/confd/templates
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/sshconfig.toml /etc/confd/conf.d
