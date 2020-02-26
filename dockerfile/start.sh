@@ -19,6 +19,10 @@ passwd -d root
 adduser $value -d /home/$value
 chown -R $value:$value /home/$value
 
+#Copy the fetched private-key to user directory
+#su -c "mkdir /home/$value/.ssh" $value
+
+
 
 # do not detach (-D), log to stderr (-e), passthrough other arguments
 exec /usr/sbin/sshd -D -e "$@"
