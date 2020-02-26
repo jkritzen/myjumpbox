@@ -29,8 +29,10 @@ RUN chmod 777 /usr/local/bin/confd
 RUN mkdir -p /etc/confd/{conf.d,templates}
 RUN chmod 777 /etc/confd/{conf.d,templates}
 
-ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd//userconfig.conf.tmpl /etc/confd/templates
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/userconfig.conf.tmpl /etc/confd/templates
 ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/userconfig.toml /etc/confd/conf.d
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/pubkeyconfig.conf.tmpl /etc/confd/templates
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/confd/pubkeyconfig.toml /etc/confd/conf.d
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.
