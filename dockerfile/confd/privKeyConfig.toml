@@ -1,6 +1,0 @@
-[template]
-src = "privkeyconfig.conf.tmpl"
-dest = "/tmp/privkeyconf.conf"
-keys = [
-        "privkey",
-       ]
