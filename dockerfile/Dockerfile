@@ -20,6 +20,9 @@ RUN dnf -y install procps
 
 RUN dnf install -y openssh-server
 RUN dnf install -y openssh-clients
+
+#Overwrite standard openssh_server config file
+ADD https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/sshd_config /etc/ssh/sshd_config
  
 RUN chmod 777 /usr/local/bin/confd
 
