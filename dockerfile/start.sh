@@ -7,7 +7,7 @@ ssh-keygen -A
 # # ensure the following environment variables are set. exit script and container if not set.
 #test $ssh
 
-#/usr/local/bin/confd -onetime -backend env
+/usr/local/bin/confd -onetime -backend env
 
 #Create user Folder dynamically form env-variable
 #1. Read user from env-variable and save it into variable
