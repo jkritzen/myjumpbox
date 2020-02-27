@@ -1,5 +1,5 @@
 [template]
-src = "pubkeyconfig.conf.tmpl"
+src = "pubKeyConfig.conf.tmpl"
 dest = "/tmp/pubkeyconf.conf"
 keys = [
         "pubkey",
