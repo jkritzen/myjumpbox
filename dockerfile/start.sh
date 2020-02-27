@@ -24,7 +24,7 @@ adduser $user -d /home/$user
 chown -R $user:$user /home/$user
 
 #Make ssh dir
-mkdir /$user/.ssh
+mkdir /home/$user/.ssh
 RUN echo "$pubkey" > /$user/.ssh/id_rsa.pub
 RUN chmod 600 /$user/.ssh/id_rsa.pub
 
@@ -35,7 +35,7 @@ touch /$user/.ssh/known_hosts
 #ssh_host_rsa_key=$(</tmp/ssh/ssh_host_rsa_key)
 #echo "$ssh_host_rsa_key"
 cp -f /tmp/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
-cp -f $pubkey /etc/ssh/ssh_host_rsa_key.pub
+RUN echo "pubkey" > /etc/ssh/ssh_host_rsa_key.pub
 
 
 # do not detach (-D), log to stderr (-e), passthrough other arguments
