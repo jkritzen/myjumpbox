@@ -35,7 +35,7 @@ touch /home/$user/.ssh/known_hosts
 #ssh_host_rsa_key=$(</tmp/ssh/ssh_host_rsa_key)
 #echo "$ssh_host_rsa_key"
 cp -f /tmp/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
-RUN echo "pubkey" > /etc/ssh/ssh_host_rsa_key.pub
+echo "pubkey" > /etc/ssh/ssh_host_rsa_key.pub
 
 
 # do not detach (-D), log to stderr (-e), passthrough other arguments
