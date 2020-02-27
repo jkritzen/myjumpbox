@@ -25,8 +25,8 @@ chown -R $user:$user /home/$user
 
 #Make ssh dir
 mkdir /home/$user/.ssh
-RUN echo "$pubkey" > /home/$user/.ssh/id_rsa.pub
-RUN chmod 600 /home/$user/.ssh/id_rsa.pub
+echo "$pubkey" > /home/$user/.ssh/id_rsa.pub
+chmod 600 /home/$user/.ssh/id_rsa.pub
 
 #Create known_hosts
 touch /home/$user/.ssh/known_hosts
