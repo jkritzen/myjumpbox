@@ -29,7 +29,7 @@ RUN echo "$pubkey" > /home/$user/.ssh/id_rsa.pub
 RUN chmod 600 /home/$user/.ssh/id_rsa.pub
 
 #Create known_hosts
-touch /$user/.ssh/known_hosts
+touch /home/$user/.ssh/known_hosts
 
 #Overwrite sshd
 #ssh_host_rsa_key=$(</tmp/ssh/ssh_host_rsa_key)
