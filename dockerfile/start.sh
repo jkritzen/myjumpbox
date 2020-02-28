@@ -2,7 +2,7 @@
 #!/bin/bash
 
 # generate host keys if not present
-ssh-keygen -A
+#ssh-keygen -A
 
 # # ensure the following environment variables are set. exit script and container if not set.
 #test $ssh
