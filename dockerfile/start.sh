@@ -24,19 +24,14 @@ adduser $user -d /home/$user
 chown -R $user:$user /home/$user
 
 #Make ssh dir
-mkdir /home/$user/.ssh
-mkdir /home/$user/.ssh/authorized_keys
+#mkdir /home/$user/.ssh
+#mkdir /home/$user/.ssh/authorized_keys
 echo "$pubkey" > /home/$user/.ssh/authorized_keys
 chmod 600 /home/$user/.ssh/authorized_keys
 
-#Create known_hosts
-touch /home/$user/.ssh/known_hosts
-
 #Overwrite sshd
-#ssh_host_rsa_key=$(</tmp/ssh/ssh_host_rsa_key)
-#echo "$ssh_host_rsa_key"
 cp -f /tmp/ssh/ssh_host_rsa_key /etc/ssh/ssh_host_rsa_key
-echo "pubkey" > /etc/ssh/ssh_host_rsa_key.pub
+cp -f /tmp/ssh/ssh_host_rsa_key.pub /etc/ssh/ssh_host_rsa_key.pub
 
 
 # do not detach (-D), log to stderr (-e), passthrough other arguments
