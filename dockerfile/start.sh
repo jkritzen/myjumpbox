@@ -25,7 +25,7 @@ chown -R $user:$user /home/$user
 
 
 #Make ssh dir
-#mkdir /home/$user/.ssh
+mkdir /home/$user/.ssh
 #chmod 700 /.ssh
 
 echo "$pubkey" > /home/$user/.ssh/authorized_keys
