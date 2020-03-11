@@ -1,5 +1,5 @@
 # jumpbox
-Simple Docker Container for providing SSH Unix Jump Services from Kubernetes
+Simple Docker Container for providing Secure SSH Unix Jump Services from Kubernetes with egress policy for ssh outbound connections.
 
 For the runtime the following environment variables has to be used:
 
