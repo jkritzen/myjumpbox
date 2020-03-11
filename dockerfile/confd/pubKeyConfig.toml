@@ -1,6 +1,0 @@
-[template]
-src = "pubKeyConfig.conf.tmpl"
-dest = "/tmp/pubkeyconf.conf"
-keys = [
-        "pubkey",
-       ]
