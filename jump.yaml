@@ -56,8 +56,6 @@ volumeMounts:
 - mountPath: /etc/ssh/keys
 name: jumpkeys
 dnsPolicy: ClusterFirst
-imagePullSecrets:
-- name: mygithub
 restartPolicy: Always
 schedulerName: default-scheduler
 securityContext: {}
