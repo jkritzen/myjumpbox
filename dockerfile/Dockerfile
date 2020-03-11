@@ -23,15 +23,15 @@ RUN chmod 755 /usr/local/bin/confd
 RUN mkdir -p /etc/confd/{conf.d,templates}
 RUN chmod 755 /etc/confd/{conf.d,templates}
 # SSHD Config file
-RUN curl https://codespace.lhsystems.int/users/clopsrancher/repos/jumpservice/raw/dockerfile/conf.d/sshd_config.tmpl -kso /etc/confd/templates/sshd_config.tmpl
-RUN curl https://codespace.lhsystems.int/users/clopsrancher/repos/jumpservice/raw/dockerfile/conf.d/sshd_config.toml -kso /etc/confd/conf.d/sshd_config.toml
+RUN curl https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/conf.d/sshd_config.tmpl -kso /etc/confd/templates/sshd_config.tmpl
+RUN curl https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/conf.d/sshd_config.toml -kso /etc/confd/conf.d/sshd_config.toml
 
 # sudoers config file
-RUN curl -u clopsrancher:G9r8SWflFMUKms https://codespace.lhsystems.int/users/clopsrancher/repos/jumpservice/raw/dockerfile/conf.d/sudoers_config.tmpl -kso /etc/confd/templates/sudoers_config.tmpl
-RUN curl -u clopsrancher:G9r8SWflFMUKms https://codespace.lhsystems.int/users/clopsrancher/repos/jumpservice/raw/dockerfile/conf.d/sudoers_config.toml -kso /etc/confd/conf.d/sudoers_config.toml
+RUN curl https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/conf.d/sudoers_config.tmpl -kso /etc/confd/templates/sudoers_config.tmpl
+RUN curl https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/conf.d/sudoers_config.toml -kso /etc/confd/conf.d/sudoers_config.toml
 
 # Add start script
-RUN curl -u clopsrancher:G9r8SWflFMUKms https://codespace.lhsystems.int/users/clopsrancher/repos/jumpservice/raw/dockerfile/start.sh -kso /start.sh
+RUN curl https://raw.githubusercontent.com/jkritzen/myjumpbox/master/dockerfile/start.sh -kso /start.sh
 RUN chmod 755 start.sh
 
 CMD /start.sh
