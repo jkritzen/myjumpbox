@@ -1,0 +1,6 @@
+[template]
+src = "sudoers_config.tmpl"
+dest = "/etc/sudoers"
+keys = [
+        "admin_user",
+       ]
